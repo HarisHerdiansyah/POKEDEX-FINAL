@@ -9,21 +9,7 @@ function Footer() {
       </aside>
 
       <aside className="right">
-        <p>Kunjungi : </p>
-        <ul>
-          <li>
-            <a href="https://www.instagram.com/harisherdian_/" target={"_blank"} rel="noreferrer" >
-            <i className="fab fa-instagram"></i>
-              harisherdian_
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/herdiansyah.haris/" target={"_blank"} rel="noreferrer" >
-            <i className="fab fa-facebook-square"></i>
-              Haris Herdiansyah
-            </a>
-          </li>
-        </ul>
+        <img src="https://www.freepnglogos.com/uploads/pokemon-logo-text-png-7.png" alt="Pokemon" width="200px" />
       </aside>
     </footer>
   )

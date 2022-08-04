@@ -1,0 +1,83 @@
+.highlight {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.card {
+  width: 150px;
+}
+
+.card > h2 {
+  text-transform: capitalize;
+}
+
+.monsName {
+  text-transform: capitalize;
+  margin-top: 20px;
+}
+
+.detailsData {
+  font-size: 1.5rem;
+}
+
+table {
+  border-spacing: 20px;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
+.aside {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+ul li.ability {
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  gap: 20px;
+  list-style: none;
+}
+
+.pagination a {
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 7px 12px;
+  border-radius: 7px;
+}
+
+.activeBtn {
+  background-color: #000;
+  color: #fff;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: inherit;
+  background-color: #181d31;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  font-family: "Poppins";
+  cursor: pointer;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 300px;
+  font-size: 14px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 0px;
+  font-family: "Poppins";
+  margin-block: 20px;
+}

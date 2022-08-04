@@ -1,0 +1,17 @@
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 992px) {
+  .title {
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .title {
+    font-size: 1.5rem !important;
+  }
+}

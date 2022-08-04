@@ -1,0 +1,13 @@
+.thumb {
+  filter: drop-shadow(0 5px 5px #181D31);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.thumb:hover {
+  transform: scale(1.2);
+}
+
+.thumb:active {
+  transform: scale(1);
+}

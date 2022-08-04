@@ -16,9 +16,7 @@ function Pokemon() {
 
   return (
     <div>
-      {
-        
-      }
+      hello world
     </div>
   )
 }

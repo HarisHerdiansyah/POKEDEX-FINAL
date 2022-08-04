@@ -1,0 +1,27 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.flexAroundWrap {
+  display: flex;
+  justify-content: space-around;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .flex,
+  .flexAround {
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .flex,
+  .flexAround {
+    flex-wrap: wrap;
+  }
+}

@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const requestDataPokemonFromAPI = () => {
+export const requestDataPokemonFromAPI = () => {
   return axios.get("https://pokedexbackend.herokuapp.com/pokemon");
-}
+};
 
-export default requestDataPokemonFromAPI;
+export const requestDetailPokemon = (id) => {
+  return axios.get(`https://pokedexbackend.herokuapp.com/pokemon/${id}`);
+};

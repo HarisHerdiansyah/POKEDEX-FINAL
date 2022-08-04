@@ -16,3 +16,10 @@ export {default as PoisonIcon} from './icons/poison-icon.png';
 export {default as PsychicIcon} from './icons/psychic-icon.png';
 export {default as NormalIcon} from './icons/normal-icon.png';
 export {default as FlyingIcon} from './icons/flying-icon.png';
+
+export {default as FbIcon} from './icons/fb-icon.png';
+export {default as IgIcon} from './icons/ig-icon.webp';
+export {default as GithubIcon} from './icons/github-icon.png';
+export {default as GitlabIcon} from './icons/gitlab-icon.png';
+
+export {default as NursiPic} from './img/nursi-pic.jpg';

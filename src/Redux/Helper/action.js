@@ -20,3 +20,10 @@ export function getErrorResponse(payload) {
     payload,
   };
 }
+
+export function addFavouritePokemon(payload) {
+  return {
+    type: constant.ADD_FAVOURITE_POKEMON,
+    payload,
+  };
+}

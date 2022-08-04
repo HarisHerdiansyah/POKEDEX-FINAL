@@ -15,6 +15,10 @@ export default function Navbar() {
     navigate('/pokemon')
   }
 
+  function favoritpage() {
+    navigate('/favourite')
+  }
+
   function aboutpage() {
     navigate('/about');
   }
@@ -37,6 +41,7 @@ export default function Navbar() {
             </li>
             <Navitem onClick={homepage}>Beranda</Navitem>
             <Navitem onClick={pokemonpage}>Pokemon</Navitem>
+            <Navitem onClick={favoritpage}>Favorit</Navitem>
             <Navitem onClick={aboutpage}>Tentang</Navitem>
           </ul>
         </div>
@@ -49,6 +54,9 @@ export default function Navbar() {
         </li>
         <li className="nav-item">
           <Navitem onClick={pokemonpage}><i className="fas fa-list-ul"></i>Pokemon</Navitem>
+        </li>
+        <li className="nav-item">
+          <Navitem onClick={favoritpage}><i className="fas fa-list-ul"></i>Favorit</Navitem>
         </li>
         <li className="nav-item">
           <Navitem onClick={aboutpage}><i className="fas fa-info-circle"></i>Tentang</Navitem>

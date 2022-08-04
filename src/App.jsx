@@ -8,6 +8,7 @@ import Header from "./Layout/Header/Header";
 import Home from "./Pages/Home/Home";
 import Pokemon from "./Pages/Pokemon/Pokemon";
 import PokemonDetails from './Pages/Pokemon/PokemonDetails';
+import PokemonFavourite from './Pages/Pokemon/PokemonFavourite';
 import About from "./Pages/About/About";
 import rootStore from "./Redux/store";
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/pokemon' element={<Pokemon />} />
+          <Route path='/favourite' element={<PokemonFavourite />} />
           <Route path='/pokemon/:id' element={<PokemonDetails />} />
           <Route path='/about' element={<About />} />
         </Routes>

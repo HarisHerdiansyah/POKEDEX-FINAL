@@ -4,18 +4,8 @@ import { useParams } from 'react-router-dom';
 import { requestDetailPokemon } from '../../Redux/Helper/api';
 
 function PokemonDetails() {
-  const params = useParams();
-  const ID = params.id;
-  const [pokemonDetails, setPokemonDetails] = useState([]);
-
-  useEffect(() => {
-    requestDetailPokemon(ID)
-      .then(response => setPokemonDetails(response?.data?.result))
-  }, [ID]);
-
   return (
     <div>
-      {/* {JSON.stringify(pokemonDetails)} */}
     <div className='details-container'>
       <div className='details-header'>
         <h1>Data Lengkap {pokemonDetails.name}</h1>

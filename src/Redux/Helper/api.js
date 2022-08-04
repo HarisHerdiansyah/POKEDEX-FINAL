@@ -1,5 +1,7 @@
 import axios from "axios";
 
-export default function requestDataPokemonFromAPI() {
+const requestDataPokemonFromAPI = () => {
   return axios.get("https://pokedexbackend.herokuapp.com/pokemon");
 }
+
+export default requestDataPokemonFromAPI;

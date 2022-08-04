@@ -1,6 +1,6 @@
 // TODO write and export store here
 
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import pokemonReducer from "./slice";
 import requestAPIFromSaga from "./sagas";

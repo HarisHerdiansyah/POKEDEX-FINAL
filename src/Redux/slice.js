@@ -1,33 +1,36 @@
 // TODO write initialState & reducer here
 
-import * as $const from "./Helper/constant";
+import * as constant from "./Helper/constant";
 
-const initialStateForPokemonData = {
+const pokemonState = {
   loadFetchingData: false,
-  failFetchingData: false,
-  pokemonSuccessResponse: {},
-  pokemonErrorResponse: {},
+  failFetch: false,
+  pokemonSuccessResponse: [],
+  pokemonErrorResponse: [],
 };
 
-const pokemonReducer = (state = initialStateForPokemonData, action) => {
+const pokemonReducer = (state = pokemonState, action) => {
   switch (action.type) {
-    case $const.LOAD_FETCHING_DATA:
+    case constant.LOAD_FETCHING_DATA:
       return { ...state, loadFetchingData: true };
 
-    case $const.GET_SUCCESS_RESPONSE:
+    case constant.GET_SUCCESS_RESPONSE:
       return {
         ...state,
         loadFetchingData: false,
         pokemonSuccessResponse: action.payload,
       };
 
-    case $const.GET_ERROR_RESPONSE:
+    case constant.GET_ERROR_RESPONSE:
       return {
         ...state,
         loadFetchingData: false,
-        failFetchingData: true,
+        failFetch: true,
         pokemonErrorResponse: action.payload,
       };
+
+    default:
+      return state;
   }
 };
 

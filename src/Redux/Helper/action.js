@@ -1,22 +1,22 @@
-import * as $const from "./constant";
+import * as constant from "./constant";
 
-export function loadFetchingData(payload) {
+export function setLoad(payload) {
   return {
-    type: $const.LOAD_FETCHING_DATA,
+    type: constant.LOAD_FETCHING_DATA,
     payload,
   };
 }
 
 export function getSuccessResponse(payload) {
   return {
-    type: $const.GET_SUCCESS_RESPONSE,
+    type: constant.GET_SUCCESS_RESPONSE,
     payload,
   };
 }
 
 export function getErrorResponse(payload) {
   return {
-    type: $const.GET_ERROR_RESPONSE,
+    type: constant.GET_ERROR_RESPONSE,
     payload,
   };
 }

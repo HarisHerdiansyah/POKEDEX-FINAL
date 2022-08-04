@@ -26,7 +26,7 @@ function Pokemon() {
     ?.slice(pagesVisited, pagesVisited + pokemonPerPage)
     ?.map(mons => {
       return (
-        <div className="card" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
+        <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
           <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
           <hr />
           <span className="monsName">
@@ -54,7 +54,7 @@ function Pokemon() {
 
   const renderSearchResult = searchResult.map(mons => {
     return (
-      <div className="card" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
+      <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
           <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
           <hr />
           <span className="monsName">

@@ -3,11 +3,11 @@
   margin-top: 100px;
 }
 
-.card {
+.pokecard {
   width: 150px;
 }
 
-.card > h2 {
+.pokecard > h2 {
   text-transform: capitalize;
 }
 

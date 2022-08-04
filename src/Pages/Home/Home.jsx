@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import Header from "../../Layout/Header/Header";
 import { useState, useEffect } from 'react'
 import './home.css'
 import section1 from '../../Assets/img/section1.png'
@@ -86,7 +85,6 @@ function Home() {
 
   return (
     <Fragment>
-      <Header />
       <main className="container">
       <div className="section1">
         <img src={section1} alt="" />

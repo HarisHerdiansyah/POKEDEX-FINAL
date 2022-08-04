@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLoad } from '../../Redux/Helper/action';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import Thumb from "../../Components/Thumb/Thumb";
 import Paragraph from "../../Components/Paragraph/Paragraph";
@@ -12,6 +12,7 @@ import "./Pokemon.css";
 
 function Pokemon() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { loadFetchingData, failFetch, pokemonSuccessResponse, pokemonErrorResponse } = useSelector(state => state);
   const [pokemonData, setPokemonData] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
@@ -25,7 +26,7 @@ function Pokemon() {
     ?.slice(pagesVisited, pagesVisited + pokemonPerPage)
     ?.map(mons => {
       return (
-        <div className="card" key={mons.uniqueID}>
+        <div className="card" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
           <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
           <hr />
           <span className="monsName">
@@ -53,16 +54,14 @@ function Pokemon() {
 
   const renderSearchResult = searchResult.map(mons => {
     return (
-      <div className="poke-card" key={mons.uniqueID}>
-        <picture>
-          <img src={mons.pictureFront} alt={mons.name} />
-        </picture>
-        <div className="label">
-          <h2>{mons.name}</h2>
-          <h4>Unique : {mons.uniqueID}</h4>
-          <h4>API ID : {mons.apiID}</h4>
+      <div className="card" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
+          <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
+          <hr />
+          <span className="monsName">
+            <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
+            <h2>{mons.name}</h2>
+          </span>
         </div>
-      </div>
     )
   })
 

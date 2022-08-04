@@ -16,3 +16,7 @@ export {default as PoisonIcon} from './icons/poison-icon.png';
 export {default as PsychicIcon} from './icons/psychic-icon.png';
 export {default as NormalIcon} from './icons/normal-icon.png';
 export {default as FlyingIcon} from './icons/flying-icon.png';
+
+export { default as pichu } from './img/pokemonPichu.png';
+export { default as pikachu } from './img/pokemonPikachu.png';
+export { default as raichu } from './img/pokemonRaichu.png';

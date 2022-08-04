@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setLoad } from '../../Redux/Helper/action';
 import { useNavigate } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+import { setLoad, addFavouritePokemon } from '../../Redux/Helper/action';
 
 import Thumb from "../../Components/Thumb/Thumb";
 import Paragraph from "../../Components/Paragraph/Paragraph";
@@ -25,12 +25,17 @@ function Pokemon() {
   const pokemonPerPage = 30;
   const pagesVisited = pageNumber * pokemonPerPage;
 
+  const addPoke = data => {
+    dispatch(addFavouritePokemon(data));
+  }
+
   const displayPokemon = pokemonData
     ?.slice(pagesVisited, pagesVisited + pokemonPerPage)
     ?.map((mons) => {
       return (
-        <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
+        <div className="pokecard" key={mons.uniqueID}>
           <Thumb src={mons.pictureFront} alt={mons.name} width="150"
+            onClick={() => navigate(`/pokemon/${mons.apiID}`)}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImg;
@@ -40,6 +45,7 @@ function Pokemon() {
             <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
             <h2>{mons.name}</h2>
           </span>
+          <button onClick={() => addPoke(mons)}>Tambah Favorit</button>
         </div>
       )
     })
@@ -61,8 +67,9 @@ function Pokemon() {
 
   const renderSearchResult = searchResult.map(mons => {
     return (
-      <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
+      <div className="pokecard" key={mons.uniqueID}>
         <Thumb src={mons.pictureFront} alt={mons.name} width="150"
+          onClick={() => navigate(`/pokemon/${mons.apiID}`)}
           onError={(e) => {
             e.target.onerror = null;
             e.target.src = defaultImg;
@@ -73,6 +80,7 @@ function Pokemon() {
           <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
           <h2>{mons.name}</h2>
         </span>
+        <button onClick={() => addPoke(mons)}>Tambah Favorit</button>
       </div>
     )
   });
@@ -83,7 +91,6 @@ function Pokemon() {
 
   useEffect(() => {
     setPokemonData(pokemonSuccessResponse);
-    console.log(pokemonSuccessResponse)
   }, [pokemonSuccessResponse]);
 
   return (
@@ -100,14 +107,14 @@ function Pokemon() {
           <FlexAroundWrap>
             {
               loadFetchingData ? <Title>Memuat Data ...</Title>
-                : failFetch ? 
-                (
-                  <div style={{textAlign: "center"}}>
-                    <Title>Terjadi Kesalahan</Title>
-                    <ErrorInfo />
-                    <Paragraph>{pokemonErrorResponse}</Paragraph>
-                  </div>
-                )
+                : failFetch ?
+                  (
+                    <div style={{ textAlign: "center" }}>
+                      <Title>Terjadi Kesalahan</Title>
+                      <ErrorInfo />
+                      <Paragraph>{pokemonErrorResponse}</Paragraph>
+                    </div>
+                  )
                   : searchResult.length === 0 ? displayPokemon
                     : renderSearchResult
             }

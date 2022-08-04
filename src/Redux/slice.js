@@ -31,7 +31,10 @@ const pokemonReducer = (state = pokemonState, action) => {
       };
 
     case constant.ADD_FAVOURITE_POKEMON:
-      return { ...state, favouritePokemon: action.payload };
+      return {
+        ...state,
+        favouritePokemon: [...state.favouritePokemon, action.payload],
+      };
 
     default:
       return state;

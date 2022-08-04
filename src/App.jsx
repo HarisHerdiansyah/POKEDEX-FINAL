@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from 'react-redux';
+import rootStore from "./Redux/store";
 
 import Navbar from "./Layout/Navbar/Navbar";
 import Footer from "./Layout/Footer/Footer";
@@ -10,8 +11,7 @@ import Pokemon from "./Pages/Pokemon/Pokemon";
 import PokemonDetails from './Pages/Pokemon/PokemonDetails';
 import PokemonFavourite from './Pages/Pokemon/PokemonFavourite';
 import About from "./Pages/About/About";
-import rootStore from "./Redux/store";
-
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
           <Route path='/favourite' element={<PokemonFavourite />} />
           <Route path='/pokemon/:id' element={<PokemonDetails />} />
           <Route path='/about' element={<About />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

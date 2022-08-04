@@ -15,6 +15,8 @@ function* apiRequestForPokemon() {
           i + 1 < 10 ? `00${i + 1}` : i + 1 < 100 ? `0${i + 1}` : `${i + 1}`
         }`,
         apiID: `${i + 1}`,
+        placeholderImg:
+          "https://www.pngplay.com/wp-content/uploads/2/Pokeball-PNG-Photo-Image.png",
       };
     });
     yield put(action.getSuccessResponse(result));

@@ -1,12 +1,12 @@
 .details-container {
-    /* border: 1px solid black; */
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
-    margin: 20px 50px;
+    margin: 200px 50px;
     background-color: rgb(245, 245, 245);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     color: grey;
+    padding-block: 30px;
 }
 .details-header {
     padding-top: 30px;
@@ -63,6 +63,11 @@
     color: rgb(255, 255, 255);
 }
 
+.Unknown {
+    background-color: rgb(255, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
 .Water {
     background-color: rgb(71, 177, 212);
@@ -75,7 +80,7 @@
     border-radius: 5px;
 }
 .Grass {
-    background-color: lightgreen;
+    background-color: rgb(33, 131, 33);
     padding: 5px 10px;
     border-radius: 5px;
 }

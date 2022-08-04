@@ -3,12 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setLoad } from '../../Redux/Helper/action';
 import { useNavigate } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+
 import Thumb from "../../Components/Thumb/Thumb";
 import Paragraph from "../../Components/Paragraph/Paragraph";
 import Section from "../../Components/Section/Section";
 import Title from "../../Components/Title/Title";
 import { FlexAroundWrap } from "../../Components/Flex/Flex";
+import ErrorInfo from '../../Components/Error Info/ErrorInfo';
 import "./Pokemon.css";
+import defaultImg from "../../Assets/img/pokemon-default-image.png";
 
 function Pokemon() {
   const dispatch = useDispatch();
@@ -27,7 +30,11 @@ function Pokemon() {
     ?.map((mons) => {
       return (
         <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
-          <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
+          <Thumb src={mons.pictureFront} alt={mons.name} width="150"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = defaultImg;
+            }} />
           <hr />
           <span className="monsName">
             <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
@@ -54,18 +61,21 @@ function Pokemon() {
 
   const renderSearchResult = searchResult.map(mons => {
     return (
-
       <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
-        <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
+        <Thumb src={mons.pictureFront} alt={mons.name} width="150"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = defaultImg;
+          }}
+        />
         <hr />
         <span className="monsName">
           <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
           <h2>{mons.name}</h2>
         </span>
       </div>
-
     )
-  })
+  });
 
   useEffect(() => {
     dispatch(setLoad());
@@ -73,6 +83,7 @@ function Pokemon() {
 
   useEffect(() => {
     setPokemonData(pokemonSuccessResponse);
+    console.log(pokemonSuccessResponse)
   }, [pokemonSuccessResponse]);
 
   return (
@@ -89,7 +100,14 @@ function Pokemon() {
           <FlexAroundWrap>
             {
               loadFetchingData ? <Title>Memuat Data ...</Title>
-                : failFetch ? <Paragraph>{pokemonErrorResponse}</Paragraph>
+                : failFetch ? 
+                (
+                  <div style={{textAlign: "center"}}>
+                    <Title>Terjadi Kesalahan</Title>
+                    <ErrorInfo />
+                    <Paragraph>{pokemonErrorResponse}</Paragraph>
+                  </div>
+                )
                   : searchResult.length === 0 ? displayPokemon
                     : renderSearchResult
             }

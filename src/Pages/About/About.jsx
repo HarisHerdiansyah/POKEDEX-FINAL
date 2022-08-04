@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import './about.css';
 import Placeholder from '../../Assets/img/profilepic-placeholder.jpg';
-import { FbIcon, IgIcon, GithubIcon, GitlabIcon, NursiPic } from '../../Assets';
+import { FbIcon, IgIcon, GithubIcon, GitlabIcon, NursiPic, HarisPic, BangkitPic } from '../../Assets';
 
 function About() {
   const [about, setAbout] = useState([]);
@@ -10,7 +10,7 @@ function About() {
   useEffect (() => {
     setAbout([
       {
-        pic: Placeholder,
+        pic: BangkitPic,
         name: "Bangkit Setio",
         desc: "Saya lulusan SMKN 5 Bandung jurusan Teknik Komputer dan Jaringan, dengan mengikuti beasiswa ini semoga saja ilmu yang saya dapatkan di di Kawah Edukasi bisa memberikan pekerjaan yang saya idamkan sebagai Web Developer",
         fbLink: "https://web.facebook.com/bangkit.raharjo.56",
@@ -19,7 +19,7 @@ function About() {
         labLink: "https://gitlab.com/Rises21"
       },
       {
-        pic: Placeholder,
+        pic: HarisPic,
         name: "Haris Herdiansyah",
         desc: "Lulus pada tahun 2022 di SMKN 1 Bojongpicung jurusan Teknik Komputer dan Jaringan. Pengalaman saya di dunia IT yaitu Praktik Kerja Lapangan sebagai IT Support di Mandala Komputer",
         fbLink: "https://www.facebook.com/herdiansyah.haris/",

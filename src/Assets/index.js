@@ -23,3 +23,5 @@ export {default as GithubIcon} from './icons/github-icon.png';
 export {default as GitlabIcon} from './icons/gitlab-icon.png';
 
 export {default as NursiPic} from './img/nursi-pic.jpg';
+export {default as HarisPic} from './img/haris-pic.jpg';
+export {default as BangkitPic} from './img/bangkit-pic.jpeg';

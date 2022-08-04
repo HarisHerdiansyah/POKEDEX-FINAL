@@ -1,0 +1,158 @@
+.details-container {
+    /* border: 1px solid black; */
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+    margin: 20px 50px;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: grey;
+}
+.details-header {
+    padding-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.details-header h1{
+    background-color: rgb(231, 194, 91);
+    border-radius: 5px;
+    padding: 5px 30px;
+    color: rgb(255, 255, 255);
+}
+.details-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+}
+.pokemon-image img{
+    width: 400px;
+    object-fit: contain;
+}
+.details-pokemon {
+    display: flex;
+    justify-content: space-around;
+}
+.stats {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.stats h2 {
+    border-bottom: 2px solid rgb(231, 194, 91);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
+    padding-bottom: 5px;
+}
+.tipe {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 50px;
+}
+.tipe h2 {
+    margin-bottom: 10px;
+}
+
+.tipe-tipe {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+
+.Water {
+    background-color: rgb(71, 177, 212);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Fire {
+    background-color: rgb(240, 64, 64);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Grass {
+    background-color: lightgreen;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Ground {
+    background-color: rgb(179, 127, 60);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Rock {
+    background-color: gray;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Ice {
+    background-color: rgb(76, 133, 219);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Electric {
+    background-color: rgb(224, 207, 55);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Dragon {
+    background-color: rgb(59, 168, 55);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Ghost {
+    background-color: rgb(51, 51, 51);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Psychic {
+    background-color: rgb(180, 38, 173);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Normal {
+    background-color: rgb(233, 152, 45);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Fairy {
+    background-color: rgb(240, 226, 107);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Bug {
+    background-color: rgb(18, 143, 28);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Flying {
+    background-color: rgb(52, 228, 213);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Dark {
+    background-color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Poison {
+    background-color: rgb(194, 135, 250);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+.container-statistik {
+    width: 500px;
+}
+.statistik {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    row-gap: 50px;
+}

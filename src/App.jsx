@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import Navbar from "./Layout/Navbar/Navbar";
 import Footer from "./Layout/Footer/Footer";
+import Header from "./Layout/Header/Header";
 import Home from "./Pages/Home/Home";
 import Pokemon from "./Pages/Pokemon/Pokemon";
 import About from "./Pages/About/About";
@@ -14,6 +15,7 @@ function App() {
   return (
     <Provider store={rootStore}>
       <BrowserRouter>
+        <Header />
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

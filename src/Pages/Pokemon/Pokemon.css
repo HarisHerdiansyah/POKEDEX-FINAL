@@ -58,14 +58,15 @@ ul li.ability {
 }
 
 button {
-  padding: 8px 12px;
-  font-size: inherit;
+  padding: 6px 10px;
   background-color: #181d31;
   color: #fff;
   border: 0;
   border-radius: 12px;
   font-family: "Poppins";
   cursor: pointer;
+  font-size: 12px;
+  margin-top: 12px;
 }
 
 input[type="text"] {

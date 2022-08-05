@@ -16,18 +16,13 @@ export {default as PoisonIcon} from './icons/poison-icon.png';
 export {default as PsychicIcon} from './icons/psychic-icon.png';
 export {default as NormalIcon} from './icons/normal-icon.png';
 export {default as FlyingIcon} from './icons/flying-icon.png';
-
-<<<<<<< HEAD
 export {default as FbIcon} from './icons/fb-icon.png';
 export {default as IgIcon} from './icons/ig-icon.webp';
 export {default as GithubIcon} from './icons/github-icon.png';
 export {default as GitlabIcon} from './icons/gitlab-icon.png';
-
 export {default as NursiPic} from './img/nursi-pic.jpg';
 export {default as HarisPic} from './img/haris-pic.jpg';
 export {default as BangkitPic} from './img/bangkit-pic.jpeg';
-=======
 export { default as pichu } from './img/pokemonPichu.png';
 export { default as pikachu } from './img/pokemonPikachu.png';
 export { default as raichu } from './img/pokemonRaichu.png';
->>>>>>> bangkitsetior

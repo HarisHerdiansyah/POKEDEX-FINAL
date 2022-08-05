@@ -1,7 +1,8 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deleteFavouritePokemon } from '../../Redux/Helper/action';
+import Swal from 'sweetalert2';
 
 import Thumb from "../../Components/Thumb/Thumb";
 import Section from "../../Components/Section/Section";
@@ -30,24 +31,29 @@ function PokemonFavourite() {
               favouritePokemon?.length === 0 ? <Paragraph>Tidak ada Pokemon</Paragraph>
                 : favouritePokemon?.filter((value, index) => favouritePokemon.indexOf(value) === index)
                   ?.sort((a, b) => a.uniqueID - b.uniqueID)
-                  ?.map(fav => {
-                  return (
-                    <div className="pokecard" key={fav.uniqueID}>
-                      <Thumb src={fav.pictureFront} alt={fav.name} width="150"
-                        onClick={() => navigate(`/pokemon/${fav.apiID}`)}
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = defaultImg;
-                        }} />
-                      <hr />
-                      <span className="monsName">
-                        <Paragraph>Nomor : {fav.uniqueID}</Paragraph>
-                        <h2>{fav.name}</h2>
-                      </span>
-                      <button onClick={() => deletePoke(fav.uniqueID)}>Hapus dari Favorit</button>
-                    </div>
-                  )
-                })
+                  ?.map(mons => {
+                    return (
+                      <div className="pokecard" key={mons.uniqueID}>
+                        <Thumb src={mons.pictureBack} alt={mons.name} width="150"
+                          onClick={() => navigate(`/pokemon/${mons.apiID}`)}
+                          onMouseOver={(e) => e.target.src = mons.pictureFront}
+                          onMouseLeave={(e) => e.target.src = mons.pictureBack}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = defaultImg;
+                          }} />
+                        <hr />
+                        <span className="monsName">
+                          <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
+                          <h2>{mons.name}</h2>
+                        </span>
+                        <button onClick={() => {
+                          deletePoke(mons.uniqueID);
+                          Swal.fire("Pokemon telah dihapus!", `${mons.name} telah dihapus dari favorit.`, "info");
+                        }}>Hapus dari Favorit</button>
+                      </div>
+                    )
+                  })
             }
           </FlexAroundWrap>
         </div>

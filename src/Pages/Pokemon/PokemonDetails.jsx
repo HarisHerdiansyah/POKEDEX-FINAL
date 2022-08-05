@@ -2,19 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './PokemonDetails.css'
 import { useParams } from 'react-router-dom';
 import { requestDetailPokemon } from '../../Redux/Helper/api';
-import { addFavouritePokemon } from "../../Redux/Helper/action";
-import { useDispatch } from 'react-redux';
 import defaultImg from "../../Assets/img/pokemon-default-image.png";
 
 function PokemonDetails() {
-  const dispatch = useDispatch();
   const params = useParams();
   const ID = params.id;
   const [pokemonDetails, setPokemonDetails] = useState({});
-
-  const addPoke = data => {
-    dispatch(addFavouritePokemon(data));
-  }
 
   useEffect(() => {
     requestDetailPokemon(ID)
@@ -66,9 +59,7 @@ function PokemonDetails() {
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImg;
-            }} 
-            onClick={() => addPoke(pokemonDetails)}
-            />
+            }} />
         </div>
         <div className='stats'>
           <div className='tipe'>

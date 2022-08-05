@@ -23,7 +23,7 @@ function Pokemon() {
 
   // * Paginate logic
   const [pageNumber, setPageNumber] = useState(0);
-  const pokemonPerPage = 30;
+  const pokemonPerPage = 32;
   const pagesVisited = pageNumber * pokemonPerPage;
 
   const addPoke = data => {

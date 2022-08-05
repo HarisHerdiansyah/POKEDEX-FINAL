@@ -1,7 +1,5 @@
 .tentang {
     background-image: url('../../Assets/img/bg.jpg');
-    padding-bottom: 100px;
-    padding-top: 20px;
 }
 
 .tentang-header {
@@ -20,8 +18,6 @@
 }
 
 .card-container {
-    /* border: 1px solid rgb(255, 194, 113); */
-    /* background-color: rgb(241, 241, 241); */
     margin: 10px 0;
     height: auto;
     display: flex;
@@ -32,12 +28,11 @@
     padding: 30px 0;
 }
 
-.card {
-    /* border: 1px solid grey; */
+.team-card {
     box-shadow: 5px 4px 7px 0 rgba(0,0,0,0.2);
     background-color: white;
     border-radius: 15px;
-    height: 550px;
+    height: 700px;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -49,12 +44,12 @@
     border: 3px solid rgb(187, 148, 64);
 }
 
-.card img {
+.team-card img {
     margin: 20px 0;
     width: 200px;
     border-radius: 100px;
 }
-.card h4 {
+.team-card h4 {
     font-weight: lighter;
     margin-top: 20px;
     padding: 0 40px;
@@ -62,6 +57,7 @@
 }
 
 .social-media {
+    margin-top: 100px;
     display: flex;
     gap: 7px;
 }

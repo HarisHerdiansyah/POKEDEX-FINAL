@@ -1,13 +1,16 @@
+// * library / module
 import React from 'react';
 import { useEffect, useState } from 'react';
-import './about.css';
-import Placeholder from '../../Assets/img/profilepic-placeholder.jpg';
+
+// * assets / components
+import Section from "../../Components/Section/Section";
 import { FbIcon, IgIcon, GithubIcon, GitlabIcon, NursiPic, HarisPic, BangkitPic } from '../../Assets';
+import './about.css';
 
 function About() {
   const [about, setAbout] = useState([]);
 
-  useEffect (() => {
+  useEffect(() => {
     setAbout([
       {
         pic: BangkitPic,
@@ -40,14 +43,15 @@ function About() {
   }, [])
 
   return (
-    <div className='tentang'>
-      <div className="tentang-header">
-        <h1>Tentang Kita!</h1>
-        <h3>Team Project Pokedex Kawah Edukasi</h3>
-      </div>
-      <div className="card-container">
-          {about?.map((about, idx)=>(
-            <div key={idx} className="card">
+    <Section>
+      <div className='tentang'>
+        <div className="tentang-header">
+          <h1>Tentang Kita!</h1>
+          <h3>Team Project Pokedex Kawah Edukasi</h3>
+        </div>
+        <div className="card-container">
+          {about?.map((about, idx) => (
+            <div key={idx} className="team-card">
               <div><img className='placeholder-pic' src={about.pic} alt="" /></div>
               <div>
                 <h2>{about.name}</h2>
@@ -56,16 +60,17 @@ function About() {
                 <h4>{about.desc}</h4>
               </div>
               <div className='social-media'>
-                <a href={about.fbLink} target="_blank"><img src={FbIcon} alt="" /></a>
-                <a href={about.igLink} target="_blank"><img src={IgIcon} alt="" /></a>
-                <a href={about.hubLink} target="_blank"><img src={GithubIcon} alt="" /></a>
-                <a href={about.labLink} target="_blank"><img src={GitlabIcon} alt="" /></a>
+                <a href={about.fbLink} target="_blank" rel="noreferrer"><img src={FbIcon} alt="" /></a>
+                <a href={about.igLink} target="_blank" rel="noreferrer"><img src={IgIcon} alt="" /></a>
+                <a href={about.hubLink} target="_blank" rel="noreferrer"><img src={GithubIcon} alt="" /></a>
+                <a href={about.labLink} target="_blank" rel="noreferrer"><img src={GitlabIcon} alt="" /></a>
               </div>
             </div>
-            ))
+          ))
           }
+        </div>
       </div>
-    </div>
+    </Section>
   )
 }
 

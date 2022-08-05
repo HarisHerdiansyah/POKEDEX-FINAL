@@ -1,7 +1,10 @@
+// * library / module
 import React, { useEffect, useState } from 'react';
 import './PokemonDetails.css'
 import { useParams } from 'react-router-dom';
 import { requestDetailPokemon } from '../../Redux/Helper/api';
+
+// * assests / components
 import defaultImg from "../../Assets/img/pokemon-default-image.png";
 
 function PokemonDetails() {
@@ -69,7 +72,7 @@ function PokemonDetails() {
                 {
                   pokemonDetails?.types?.map((type, i) => {
                     return (
-                      <div className={type} key={i}>{type}</div>
+                      <div className={type} key={i} style={{fontSize: "18px"}}>{type}</div>
                     )
                   })
                 }
@@ -81,7 +84,7 @@ function PokemonDetails() {
                 {
                   pokemonDetails?.abilities?.map((ability, i) => {
                     return (
-                      <div key={i}>{ability}</div>
+                      <div key={i} style={{fontSize: "18px"}}>{ability}</div>
                     )
                   })
                 }

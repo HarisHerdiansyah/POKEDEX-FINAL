@@ -21,14 +21,16 @@ function App() {
         <BrowserRouter>
           <Header />
           <Navbar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/pokemon' element={<Pokemon />} />
-            <Route path='/favourite' element={<PokemonFavourite />} />
-            <Route path='/pokemon/:id' element={<PokemonDetails />} />
-            <Route path='/about' element={<About />} />
-            <Route path='*' element={<ErrorPage />} />
-          </Routes>
+          <main className="container">
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/pokemon' element={<Pokemon />} />
+              <Route path='/favourite' element={<PokemonFavourite />} />
+              <Route path='/pokemon/:id' element={<PokemonDetails />} />
+              <Route path='/about' element={<About />} />
+              <Route path='*' element={<ErrorPage />} />
+            </Routes>
+          </main>
           <Footer />
         </BrowserRouter>
       </PersistGate>

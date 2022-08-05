@@ -7,6 +7,7 @@ const pokemonState = {
   failFetch: false,
   pokemonSuccessResponse: [],
   pokemonErrorResponse: [],
+  favouritePokemon: [],
 };
 
 const pokemonReducer = (state = pokemonState, action) => {
@@ -28,6 +29,9 @@ const pokemonReducer = (state = pokemonState, action) => {
         failFetch: true,
         pokemonErrorResponse: action.payload,
       };
+
+    case constant.ADD_FAVOURITE_POKEMON:
+      return { ...state, favouritePokemon: action.payload };
 
     default:
       return state;

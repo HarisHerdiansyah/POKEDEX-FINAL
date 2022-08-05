@@ -24,7 +24,7 @@ function Pokemon() {
 
   const displayPokemon = pokemonData
     ?.slice(pagesVisited, pagesVisited + pokemonPerPage)
-    ?.map(mons => {
+    ?.map((mons) => {
       return (
         <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
           <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
@@ -37,7 +37,7 @@ function Pokemon() {
       )
     })
 
-  const pageCount = Math.ceil(pokemonData.length / pokemonPerPage);
+  const pageCount = Math.ceil(pokemonData?.length / pokemonPerPage);
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   }
@@ -54,14 +54,16 @@ function Pokemon() {
 
   const renderSearchResult = searchResult.map(mons => {
     return (
+
       <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
-          <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
-          <hr />
-          <span className="monsName">
-            <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
-            <h2>{mons.name}</h2>
-          </span>
-        </div>
+        <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
+        <hr />
+        <span className="monsName">
+          <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
+          <h2>{mons.name}</h2>
+        </span>
+      </div>
+
     )
   })
 

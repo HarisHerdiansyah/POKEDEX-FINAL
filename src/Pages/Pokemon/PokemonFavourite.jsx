@@ -15,11 +15,6 @@ function PokemonFavourite() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { favouritePokemon } = useSelector(state => state);
-  // const listFavouritePokemon = [...favouritePokemon].filter((value, index) => {
-  //   return [...favouritePokemon].indexOf(value) === index;
-  // }).sort((a, b) => {
-  //   return a.uniqueID - b.uniqueID;
-  // });
 
   const deletePoke = uniqueID => {
     dispatch(deleteFavouritePokemon(uniqueID));

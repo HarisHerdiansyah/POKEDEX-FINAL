@@ -21,6 +21,7 @@
     border-radius: 5px;
     padding: 5px 30px;
     color: rgb(255, 255, 255);
+    width: auto;
 }
 .details-pokemon {
     display: flex;
@@ -54,15 +55,16 @@
 }
 .tipe h2 {
     margin-bottom: 10px;
+    padding: 5px 10px;
 }
 
 .tipe-tipe {
     display: flex;
     gap: 10px;
     text-align: center;
+    justify-content: center;
     color: rgb(255, 255, 255);
 }
-
 
 .Water {
     background-color: rgb(71, 177, 212);

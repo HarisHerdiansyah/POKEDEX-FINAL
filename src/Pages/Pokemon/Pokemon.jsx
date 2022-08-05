@@ -26,13 +26,16 @@ function Pokemon() {
     ?.slice(pagesVisited, pagesVisited + pokemonPerPage)
     ?.map((mons) => {
       return (
-        <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
-          <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
-          <hr />
-          <span className="monsName">
-            <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
-            <h2>{mons.name}</h2>
-          </span>
+        <div className='pokecard-container'>
+          <div className="pokecard" key={mons.uniqueID} onClick={() => navigate(`/pokemon/${mons.apiID}`)} >
+            <Thumb src={mons.pictureFront} alt={mons.name} width="150" />
+            <hr />
+            <span className="monsName">
+              <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
+              <h2>{mons.name}</h2>
+            </span>
+          </div>
+          <div className='fav-add'>Add Favorite</div>
         </div>
       )
     })

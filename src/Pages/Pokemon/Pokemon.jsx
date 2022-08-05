@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { setLoad, addFavouritePokemon } from '../../Redux/Helper/action';
+import Swal from 'sweetalert2';
 
 import Thumb from "../../Components/Thumb/Thumb";
 import Paragraph from "../../Components/Paragraph/Paragraph";
@@ -34,8 +35,10 @@ function Pokemon() {
     ?.map((mons) => {
       return (
         <div className="pokecard" key={mons.uniqueID}>
-          <Thumb src={mons.pictureFront} alt={mons.name} width="150"
+          <Thumb src={mons.pictureBack} alt={mons.name} width="150"
             onClick={() => navigate(`/pokemon/${mons.apiID}`)}
+            onMouseOver={(e) => e.target.src = mons.pictureFront}
+            onMouseLeave={(e) => e.target.src = mons.pictureBack}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImg;
@@ -47,7 +50,7 @@ function Pokemon() {
           </span>
           <button onClick={() => {
             addPoke(mons);
-            alert(`${mons.name} telah ditambahkan!`)
+            Swal.fire("Berhasil menambahkan pokemon!", `${mons.name} telah ditambahkan ke favorit!`, "success");
           }}>Tambah ke Favorit</button>
         </div>
       )
@@ -71,8 +74,10 @@ function Pokemon() {
   const renderSearchResult = searchResult.map(mons => {
     return (
       <div className="pokecard" key={mons.uniqueID}>
-        <Thumb src={mons.pictureFront} alt={mons.name} width="150"
+        <Thumb src={mons.pictureBack} alt={mons.name} width="150"
           onClick={() => navigate(`/pokemon/${mons.apiID}`)}
+          onMouseOver={(e) => e.target.src = mons.pictureFront}
+          onMouseLeave={(e) => e.target.src = mons.pictureBack}
           onError={(e) => {
             e.target.onerror = null;
             e.target.src = defaultImg;
@@ -85,7 +90,7 @@ function Pokemon() {
         </span>
         <button onClick={() => {
           addPoke(mons);
-          alert(`${mons.name} telah ditambahkan!`)
+          Swal.fire("Berhasil menambahkan pokemon!", `${mons.name} telah ditambahkan ke favorit!`, "success");
         }}>Tambah ke Favorit</button>
       </div>
     )

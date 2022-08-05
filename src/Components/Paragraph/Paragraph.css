@@ -1,5 +1,6 @@
 .paragraph {
   font-size: 1.15rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 992px) {

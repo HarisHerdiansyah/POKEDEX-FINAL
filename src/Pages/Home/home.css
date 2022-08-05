@@ -2,13 +2,11 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.section1 {
-    display: flex;
-}
+
 
 .section1,
 .section2 {
-    height: 300px;
+    height: auto;
     display: flex;
     align-items: center;
     margin-top: 50px;
@@ -16,13 +14,14 @@ body {
 }
 
 .section1 img {
+    width: auto;
     height: 150px;
     margin-right: 50px;
     transition: transform 0.2s;
 }
 
 .section2 img {
-    margin-left: 10px;
+    margin-left: 20px;
     transition: transform 0.2s;
 }
 
@@ -85,4 +84,56 @@ body {
 .icon-types img {
     height: 120px;
     border-radius: 100px;
+}
+
+
+@media (max-width: 1000px) {
+    .sections {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section1 img {
+        margin-bottom: 30px;
+        width: 320px;
+        margin: auto;
+    }
+
+    .section2 img {
+        margin-bottom: 30px;
+        width: 320px;
+        margin: auto;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .section2 img {
+       width: 350px;
+    }
+    
+    .section1 img:hover {
+        transform: none;
+    }
+    
+    .section1 img:active {
+        transform: none;
+    }
+    
+    .section2 img:hover {
+        transform: none;
+    }
+    
+    .section2 img:active {
+        transform: none;
+    }
 }

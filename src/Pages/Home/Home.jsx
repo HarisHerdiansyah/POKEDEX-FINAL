@@ -85,8 +85,9 @@ function Home() {
   return (
     <Fragment>
       <main className="container">
+      <div className='sections'>
       <div className="section1">
-        <img src={section1} alt="" />
+        <div><img src={section1} alt="" /></div>
         <div>
           <h2>Apa itu Pokémon?</h2>
           <p>Pokémon adalah makhluk misterius dengan banyak rahasia. Beberapa Pokémon tinggal bersama manusia dan beberapa tinggal di alam bebas di padang rumput, gua, atau laut, tapi banyak hal tentang ekologi mereka yang masih belum diketahui. Salah satu fitur utama mereka adalah bahwa mereka dapat ditangkap menggunakan Poké Ball, yang memungkinkan mereka dibawa-bawa.</p>
@@ -97,8 +98,10 @@ function Home() {
             <h2>Berapa banyak tipe Pokémon?</h2>
             <p>Pokémon dikelompokkan menjadi 18 tipe berdasarkan karakteristiknya. Sebagai contoh, Pikachu adalah tipe Pokémon Elektronik dan Magikarp adalah tipe Air. Ada beberapa Pokémon yang termasuk dalam dua tipe, seperti Jigglypuff, yang merupakan tipe Normal dan Peri. Setiap tipe memiliki afinitas khusus yang memiliki pengaruh besar dalam pertarungan. Jika Pokémon milik lawanmu memiliki jenis afinitas yang tepat, itu bisa menjadi keuntungan besar dalam pertarungan.</p>
           </div>
-          <img src={section2} alt="" />
+          <div><img src={section2} alt="" /></div>
       </div>
+      </div>
+
       <div className="section2-type">
           <div className="types">
           {types?.map((type, idx)=>(

@@ -31,7 +31,18 @@ const pokemonReducer = (state = pokemonState, action) => {
       };
 
     case constant.ADD_FAVOURITE_POKEMON:
-      return { ...state, favouritePokemon: action.payload };
+      return {
+        ...state,
+        favouritePokemon: [...state.favouritePokemon, action.payload],
+      };
+
+    case constant.DELETE_FAVOURITE_POKEMON:
+      const eliminate = [...state.favouritePokemon].filter((mons) => {
+        return mons.uniqueID !== action.payload;
+      });
+      return {
+        favouritePokemon: eliminate,
+      };
 
     default:
       return state;

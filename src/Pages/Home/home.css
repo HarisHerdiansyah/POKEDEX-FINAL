@@ -1,139 +1,204 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
 
 .section1,
 .section2 {
-    height: auto;
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    color: rgb(52, 52, 52);
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  color: rgb(52, 52, 52);
 }
 
 .section1 img {
-    width: auto;
-    height: 150px;
-    margin-right: 50px;
-    transition: transform 0.2s;
+  width: auto;
+  height: 150px;
+  margin-right: 50px;
+  transition: transform 0.2s;
 }
 
 .section2 img {
-    margin-left: 20px;
-    transition: transform 0.2s;
+  margin-left: 20px;
+  transition: transform 0.2s;
 }
 
 .section1 img:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .section1 img:active {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .section2 img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .section2 img:active {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .section1 h2,
 .section2 h2 {
-    font-size: 35px;
-    margin-bottom: 10px;
+  font-size: 35px;
+  margin-bottom: 10px;
 }
 
 .section1 p,
 .section2 p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .section2-type {
-    margin: 50px 0;
+  margin: 50px 0;
 }
 
 .types {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
 }
 
 .icon-types {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(52, 52, 52);
-    font-size: 20px;
-    transition: transform 0.2s;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(52, 52, 52);
+  font-size: 20px;
+  transition: transform 0.2s;
 }
 
 .icon-types:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .icon-types:active {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .icon-types img {
-    height: 120px;
-    border-radius: 100px;
+  height: 120px;
+  border-radius: 100px;
 }
 
-
 @media (max-width: 1000px) {
-    .sections {
-        display: flex;
-        flex-direction: column;
-    }
+  .sections {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .section1 {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
+  .section1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .section1 img {
-        margin-bottom: 30px;
-        width: 320px;
-        margin: auto;
-    }
+  .section1 img {
+    margin-bottom: 30px;
+    width: 320px;
+    margin: auto;
+  }
 
-    .section2 img {
-        margin-bottom: 30px;
-        width: 320px;
-        margin: auto;
-    }
+  .section2 img {
+    margin-bottom: 30px;
+    width: 320px;
+    margin: auto;
+  }
 
-    .section2 {
-        display: flex;
-        flex-direction: column-reverse;
-        text-align: center;
-    }
+  .section2 {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 
-    .section2 img {
-       width: 350px;
-    }
-    
-    .section1 img:hover {
-        transform: none;
-    }
-    
-    .section1 img:active {
-        transform: none;
-    }
-    
-    .section2 img:hover {
-        transform: none;
-    }
-    
-    .section2 img:active {
-        transform: none;
-    }
+  .section2 img {
+    width: 350px;
+  }
+
+  .section1 img:hover {
+    transform: none;
+  }
+
+  .section1 img:active {
+    transform: none;
+  }
+
+  .section2 img:hover {
+    transform: none;
+  }
+
+  .section2 img:active {
+    transform: none;
+  }
+}
+
+/* ======== section 3 ======== */
+.imgContainerEvolusiPokemon {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.image-tipe {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  flex-wrap: wrap;
+}
+
+.imgContainerEvolusiPokemon img {
+  margin: 30px;
+  width: 150px;
+  height: auto;
+}
+
+div .EvolusiPokemonContainer h1 {
+  background-color: #181d31;
+  border-radius: 15px;
+  border: solid 1px #1a2cd6;
+  text-align: center;
+  color: #f2fa11;
+  padding: 20px;
+  margin: 30px;
+}
+
+.wrapper-section-3 > p,
+h4 {
+  padding: 20px;
+  margin: 15px;
+}
+.listevo {
+  padding-left: 30px;
+  margin: 20px;
+}
+
+/* ======== section 3 ======== */
+
+/* ======== section 4 ======== */
+div .section-4-type .waralabaPokemonContainer h1 {
+  text-align: center;
+  background-color: #181d31;
+  border-radius: 15px;
+  border: solid 1px #1a2cd6;
+  color: #f2fa11;
+  padding: 20px;
+  margin: 30px;
+}
+
+div .section-4-type .waralabaPokemonContainer div .imagePokemonFloatLeft {
+  display: block;
+  float: left;
+  margin: 20px;
+  margin-right: 30px;
+}
+div .section-4-type .waralabaPokemonContainer .imagePokemonFloatRight {
+  display: block;
+  float: right;
+  margin: 20px;
+  margin-left: 30px;
+}
+div .section-4-type .waralabaPokemonContainer p {
+  padding: 20px;
 }

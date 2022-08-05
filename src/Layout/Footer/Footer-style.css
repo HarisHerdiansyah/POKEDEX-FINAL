@@ -6,14 +6,13 @@ footer {
   padding: 40px 60px;
   display: flex;
   justify-content: space-between;
+  clear: both;
 }
 
 .left h3 {
   margin-top: 12px;
   letter-spacing: 1px;
 }
-
-
 
 @media screen and (max-width: 768px) {
   footer {

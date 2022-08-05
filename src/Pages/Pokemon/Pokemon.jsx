@@ -45,7 +45,10 @@ function Pokemon() {
             <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
             <h2>{mons.name}</h2>
           </span>
-          <button onClick={() => addPoke(mons)}>Tambah Favorit</button>
+          <button onClick={() => {
+            addPoke(mons);
+            alert(`${mons.name} telah ditambahkan!`)
+          }}>Tambah ke Favorit</button>
         </div>
       )
     })
@@ -80,7 +83,10 @@ function Pokemon() {
           <Paragraph>Nomor : {mons.uniqueID}</Paragraph>
           <h2>{mons.name}</h2>
         </span>
-        <button onClick={() => addPoke(mons)}>Tambah Favorit</button>
+        <button onClick={() => {
+          addPoke(mons);
+          alert(`${mons.name} telah ditambahkan!`)
+        }}>Tambah ke Favorit</button>
       </div>
     )
   });

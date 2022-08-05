@@ -1,28 +1,41 @@
 import React, { Fragment, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { deleteFavouritePokemon } from '../../Redux/Helper/action';
 
 import Thumb from "../../Components/Thumb/Thumb";
 import Section from "../../Components/Section/Section";
 import Title from "../../Components/Title/Title";
 import Paragraph from "../../Components/Paragraph/Paragraph";
-import { Flex } from "../../Components/Flex/Flex";
+import { FlexAroundWrap } from "../../Components/Flex/Flex";
 import defaultImg from "../../Assets/img/pokemon-default-image.png";
 import "./Pokemon.css";
 
 function PokemonFavourite() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { favouritePokemon } = useSelector(state => state);
+  // const listFavouritePokemon = [...favouritePokemon].filter((value, index) => {
+  //   return [...favouritePokemon].indexOf(value) === index;
+  // }).sort((a, b) => {
+  //   return a.uniqueID - b.uniqueID;
+  // });
+
+  const deletePoke = uniqueID => {
+    dispatch(deleteFavouritePokemon(uniqueID));
+  }
 
   return (
     <Fragment>
       <Section>
         <div style={{ padding: "0 100px" }}>
           <Title>Pokemon Favorit</Title>
-          <Flex>
+          <FlexAroundWrap>
             {
               favouritePokemon?.length === 0 ? <Paragraph>Tidak ada Pokemon</Paragraph>
-                : favouritePokemon?.map(fav => {
+                : favouritePokemon?.filter((value, index) => favouritePokemon.indexOf(value) === index)
+                  ?.sort((a, b) => a.uniqueID - b.uniqueID)
+                  ?.map(fav => {
                   return (
                     <div className="pokecard" key={fav.uniqueID}>
                       <Thumb src={fav.pictureFront} alt={fav.name} width="150"
@@ -36,11 +49,12 @@ function PokemonFavourite() {
                         <Paragraph>Nomor : {fav.uniqueID}</Paragraph>
                         <h2>{fav.name}</h2>
                       </span>
+                      <button onClick={() => deletePoke(fav.uniqueID)}>Hapus dari Favorit</button>
                     </div>
                   )
                 })
             }
-          </Flex>
+          </FlexAroundWrap>
         </div>
       </Section>
     </Fragment>

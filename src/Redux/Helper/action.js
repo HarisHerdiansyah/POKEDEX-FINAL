@@ -27,3 +27,10 @@ export function addFavouritePokemon(payload) {
     payload,
   };
 }
+
+export function deleteFavouritePokemon(payload) {
+  return {
+    type: constant.DELETE_FAVOURITE_POKEMON,
+    payload,
+  };
+}
